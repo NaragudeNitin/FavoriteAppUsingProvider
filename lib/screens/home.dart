@@ -26,13 +26,16 @@ class _MyHomePageState extends State<MyHomePage> {
         itemCount: words.length,
         itemBuilder: (context, index) {
         final word =words[index];
-        return ListTile(
-          title: Text(word),
-          trailing: IconButton(onPressed: () {
-            provider.togglefavorite(word);
-          }, icon: provider.isExist(word)
-          ? const Icon(Icons.favorite, color: Colors.red,) 
-          : const Icon(Icons.favorite_border_rounded)
+        return Card(
+          elevation: 5.5,
+          child: ListTile(
+            title: Text(word),
+            trailing: IconButton(onPressed: () {
+              provider.togglefavorite(word);
+            }, icon: provider.isExist(word)
+            ? const Icon(Icons.favorite, color: Colors.red,) 
+            : const Icon(Icons.favorite_border_rounded)
+            ),
           ),
         ); 
       },),
